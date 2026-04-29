@@ -1,210 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWFR52R4');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehensive Tracking Form</title>
     <style>
-        :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f4f7f6;
-            --text-color: #333;
-            --border-radius: 8px;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             padding: 40px 20px;
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWFR52R4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
         }
-
-        .form-container {
-            background: white;
+        .form-card {
+            background: #fff;
             padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             width: 100%;
+            max-width: 500px;
         }
-
-        h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 30px;
+        .field-group { margin-bottom: 18px; }
+        label { display: block; font-weight: 600; margin-bottom: 5px; color: #333; }
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
         }
-
-        /* Progress Stepper */
-        .stepper {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            position: relative;
+        .error-msg {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 4px;
+            display: block;
+            min-height: 1.2em;
         }
-
-        .step {
-            text-align: center;
-            z-index: 1;
-            flex: 1;
+        .radio-check-group { display: flex; gap: 15px; align-items: center; }
+        button {
+            width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;
         }
-
-        .step-number {
-            width: 30px;
-            height: 30px;
-            background: #ddd;
-            border-radius: 50%;
-            display: inline-block;
-            line-height: 30px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .step.active .step-number {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* Form Layout */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .full-width {
-            grid-column: span 2;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        input, select, textarea {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-        }
-
-        .btn-submit {
-            margin-top: 20px;
-            width: 100%;
-            padding: 15px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-submit:hover {
-            background-color: #357abd;
-        }
-
-        @media (max-width: 600px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .full-width { grid-column: span 1; }
-        }
+        button:hover { background-color: #0056b3; }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BF9LQ5TNJ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BF9LQ5TNJ0');
+</script>
 <body>
 
-<div class="form-container">
-    <h2>Project Tracking Portal</h2>
-
-    <div class="stepper">
-        <div class="step active">
-            <div class="step-number">1</div>
-            <div class="step-label">Initiation</div>
-        </div>
-        <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-label">In Progress</div>
-        </div>
-        <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-label">Review</div>
-        </div>
-        <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-label">Done</div>
-        </div>
-    </div>
-
-    <form action="#" method="POST">
-        <div class="form-grid">
-            <div class="form-group">
-                <label for="proj-name">Project / Task Name</label>
-                <input type="text" id="proj-name" name="proj-name" placeholder="Enter title..." required>
-            </div>
-
-            <div class="form-group">
-                <label for="category">Category</label>
-                <select id="category" name="category">
-                    <option value="development">Development</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="design">Design</option>
-                    <option value="admin">Administrative</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="start-date">Start Date</label>
-                <input type="date" id="start-date" name="start-date">
-            </div>
-
-            <div class="form-group">
-                <label for="priority">Priority Level</label>
-                <select id="priority" name="priority">
-                    <option value="low">Low</option>
-                    <option value="medium" selected>Medium</option>
-                    <option value="high">High</option>
-                    <option value="urgent">Urgent</option>
-                </select>
-            </div>
-
-            <div class="form-group full-width">
-                <label for="progress-range">Completion Percentage (%)</label>
-                <input type="range" id="progress-range" name="progress-range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value + '%'">
-                <output style="text-align: center; font-weight: bold; margin-top: 5px;">0%</output>
-            </div>
-
-            <div class="form-group full-width">
-                <label for="description">Detailed Notes / Milestones</label>
-                <textarea id="description" name="description" rows="4" placeholder="Describe current progress and blockers..."></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="assignee">Assignee Email</label>
-                <input type="email" id="assignee" name="assignee" placeholder="colleague@company.com">
-            </div>
-
-            <div class="form-group">
-                <label for="attachment">Upload Documentation</label>
-                <input type="file" id="attachment" name="attachment">
-            </div>
+<div class="form-card">
+    <h2>Registration Form</h2>
+    <form id="multiFieldForm">
+        
+        <div class="field-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="John Doe">
+            <span class="error-msg" id="err-fullName"></span>
         </div>
 
-        <button type="submit" class="btn-submit">Update Tracked Record</button>
+        <div class="field-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com">
+            <span class="error-msg" id="err-email"></span>
+        </div>
+
+        <div class="field-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+            <span class="error-msg" id="err-phone"></span>
+        </div>
+
+        <div class="field-group">
+            <label for="department">Department</label>
+            <select id="department" name="department">
+                <option value="">-- Choose Dept --</option>
+                <option value="marketing">Marketing</option>
+                <option value="it">IT Support</option>
+                <option value="sales">Sales</option>
+            </select>
+            <span class="error-msg" id="err-department"></span>
+        </div>
+
+        <div class="field-group">
+            <label>Employment Type</label>
+            <div class="radio-check-group">
+                <input type="radio" id="fullTime" name="empType" value="Full-Time">
+                <label for="fullTime" style="font-weight:400">Full-Time</label>
+                <input type="radio" id="partTime" name="empType" value="Part-Time">
+                <label for="partTime" style="font-weight:400">Part-Time</label>
+            </div>
+            <span class="error-msg" id="err-empType"></span>
+        </div>
+
+        <div class="field-group">
+            <div class="radio-check-group">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms" style="display:inline; font-weight:400">I agree to the terms</label>
+            </div>
+            <span class="error-msg" id="err-terms"></span>
+        </div>
+
+        <div class="field-group">
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" rows="3" placeholder="Tell us more..."></textarea>
+            <span class="error-msg" id="err-comments"></span>
+        </div>
+
+        <div class="field-group">
+            <label for="joinDate">Preferred Start Date</label>
+            <input type="date" id="joinDate" name="joinDate">
+            <span class="error-msg" id="err-joinDate"></span>
+        </div>
+
+        <button type="submit">Submit Registration</button>
     </form>
 </div>
+
+<script>
+    document.getElementById('multiFieldForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Stop form from refreshing the page
+        
+        // Clear previous error messages
+        var errorSpans = document.querySelectorAll('.error-msg');
+        for (var i = 0; i < errorSpans.length; i++) {
+            errorSpans[i].innerText = "";
+        }
+
+        var isValid = true;
+        var missingFields = [];
+
+        // 1. Validate Full Name
+        var name = document.getElementById('fullName').value;
+        if (!name.trim()) {
+            document.getElementById('err-fullName').innerText = "Full Name is required";
+            missingFields.push("Full Name");
+            isValid = false;
+        }
+
+        // 2. Validate Email
+        var email = document.getElementById('email').value;
+        if (!email.trim()) {
+            document.getElementById('err-email').innerText = "Email is required";
+            missingFields.push("Email");
+            isValid = false;
+        }
+
+        // 3. Validate Department (Select)
+        var dept = document.getElementById('department').value;
+        if (!dept) {
+            document.getElementById('err-department').innerText = "Please select a department";
+            missingFields.push("Department");
+            isValid = false;
+        }
+
+        // 4. Validate Radio Buttons (Employment Type)
+        var empType = document.querySelector('input[name="empType"]:checked');
+        if (!empType) {
+            document.getElementById('err-empType').innerText = "Please select employment type";
+            missingFields.push("Employment Type");
+            isValid = false;
+        }
+
+        // 5. Validate Checkbox (Terms)
+        var terms = document.getElementById('terms').checked;
+        if (!terms) {
+            document.getElementById('err-terms').innerText = "You must agree to the terms";
+            missingFields.push("Terms");
+            isValid = false;
+        }
+
+        // DATA LAYER PUSHES
+        window.dataLayer = window.dataLayer || [];
+
+        if (!isValid) {
+            // Push Validation Error Event
+            window.dataLayer.push({
+                'event': 'form_error',
+                'error_type': 'missing_data',
+                'missing_fields': missingFields.join(', ')
+            });
+        } else {
+            // Push Success Event
+            window.dataLayer.push({
+                'event': 'form_submit_success',
+                'user_name': name
+            });
+            alert("Form Submitted and Tracked!");
+        }
+    });
+</script>
 
 </body>
 </html>
